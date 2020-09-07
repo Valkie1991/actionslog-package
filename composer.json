@@ -1,0 +1,28 @@
+{
+    "name": "henri/actionslog",
+    "description": "actionslog for the whole application",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Henri",
+            "email": "valkhenri1991@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "spatie/laravel-activitylog": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Henri\\Actionslog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Henri\\Actionslog\\ActionlogServiceProvider"
+            ]
+        }
+    }
+}
