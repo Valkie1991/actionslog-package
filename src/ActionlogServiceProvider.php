@@ -16,6 +16,10 @@ class ActionlogServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/config/activitylog.php', 'activitylog'
         );
+
+        $this->mergeConfigFrom(
+            __DIR__.'/database/migrations/2020_09_07_094924_create_activity_log_table.php', 'activitylog'
+        );
     }
 
     /**
@@ -31,7 +35,7 @@ class ActionlogServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
-        $this->loadViewsFrom(__DIR__.'/views', 'actionslog');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'actionslog');
 
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }

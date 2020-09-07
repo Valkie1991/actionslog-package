@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 class ActivityController extends Controller
 {
     public function index()
-    { 
-        return view('actionslog::actionslog');
+    {
+        $test = "Hallo";
+        return view('actionslog::actionslog')->with('test', $test);
     }
 }
