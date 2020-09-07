@@ -17,9 +17,6 @@ class ActionlogServiceProvider extends ServiceProvider
             __DIR__.'/config/activitylog.php', 'activitylog'
         );
 
-        $this->mergeConfigFrom(
-            __DIR__.'/database/migrations/2020_09_07_094924_create_activity_log_table.php', 'activitylog'
-        );
     }
 
     /**
