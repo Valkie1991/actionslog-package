@@ -26,6 +26,16 @@ class ActionlogServiceProvider extends ServiceProvider
     */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Commands\Install::class,
+            ]);
+
+            $this->publishes([
+                __DIR__.'/../config/Activitylog.php' => config_path('Activitylog.php')
+            ], 'config');
+        }
+
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'actionslog');
