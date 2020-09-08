@@ -21,7 +21,7 @@ class ActionlogServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/activitylog.php', 'activitylog'
+            __DIR__.'/config/actionslog.php', 'actionslog'
         );
 
     }
@@ -39,7 +39,7 @@ class ActionlogServiceProvider extends ServiceProvider
             ]);
 
             $this->publishes([
-                __DIR__.'/../config/Activitylog.php' => config_path('Activitylog.php')
+                __DIR__.'/../config/Actionslog.php' => config_path('Actionslog.php')
             ], 'config');
         }
 
