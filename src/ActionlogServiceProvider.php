@@ -7,6 +7,13 @@ use Illuminate\Support\ServiceProvider;
 class ActionlogServiceProvider extends ServiceProvider
 {
     /**
+    * Indicates if loading of the provider is deferred.
+    *
+    * @var bool
+    */
+    protected $defer = false;
+
+    /**
     * Register any application services.
     *
     * @return void
