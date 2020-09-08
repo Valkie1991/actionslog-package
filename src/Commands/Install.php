@@ -15,7 +15,7 @@ class Install extends Command {
 	 *
 	 * @var string
 	 */
-	protected $description = 'Install the actionslog to the application';
+	protected $description = 'Install the actionslog to your application';
 
 	/**
 	 * Execute the console command.
@@ -28,13 +28,8 @@ class Install extends Command {
             '--tag' => 'migrations'
         ]);
 
-        $this->info('Download the config file (config/medialibraryActionslog.php) to your project');
+        $this->info('Download the config file (config/Actionslog.php) to your project');
 
         $this->call('migrate');
-        // $this->call('db:seed', [
-        //     '--class' => 'Idesign\\MediaLibrary\\Database\\Seeds\\MediaRoutesSeeder'
-        // ]);
-        // $this->call('route:clear');
-        // $this->call('config:clear');
 	}
 }
