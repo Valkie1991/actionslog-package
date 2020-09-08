@@ -26,10 +26,6 @@ class ActionlogServiceProvider extends ServiceProvider
     */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/config/activitylog.php' => config_path('activitylog.php')
-        ], 'activitylog');
-
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'actionslog');

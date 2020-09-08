@@ -1,4 +1,4 @@
-<?php namespace henri\actionslog\Console;
+<?php namespace Henri\Actionslog\Commands;
 
 use Illuminate\Console\Command;
 
@@ -8,14 +8,14 @@ class Install extends Command {
 	 *
 	 * @var string
 	 */
-	protected $signature = 'install-Model-with-log';
+	protected $signature = 'install-actionslog';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Automatisch activitie log to models';
+	protected $description = 'Install the actionslog to the application';
 
 	/**
 	 * Execute the console command.
@@ -23,12 +23,14 @@ class Install extends Command {
 	 * @return mixed
 	 */
 	public function handle() {
-		// $this->call('vendor:publish', [
-        //     '--tag' => 'config'
-        // ]);
-        // $this->info('Download the config file (config/medialibrary.php) to your project');
+		$this->call('vendor:publish', [
+            '--tag' => 'config',
+            '--tag' => 'migrations'
+        ]);
 
-        // $this->call('migrate');
+        $this->info('Download the config file (config/medialibraryActionslog.php) to your project');
+
+        $this->call('migrate');
         // $this->call('db:seed', [
         //     '--class' => 'Idesign\\MediaLibrary\\Database\\Seeds\\MediaRoutesSeeder'
         // ]);
